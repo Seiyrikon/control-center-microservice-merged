@@ -4,6 +4,27 @@
 
 <!-- Mapper for tbl project   -->
 <mapper namespace="com.example.demo.dao.ProjectDao">
+<!-- Gets all the info needed for project list -->   <select id="projectList" resultType="com.example.demo.model.ProjectTable">
+       SELECT tproj.proj_id,
+              tproj.proj_name,
+              tc.client_name,
+              tproj.start_date,
+              tproj.end_date, 
+              devtype.dev_type_name,
+              (SELECT COUNT(*) FROM tbl_user_project AS tup WHERE tup.proj_id = tproj.proj_id AND tup.emp_id != 100) AS members,
+              ps.proj_status_name
+         FROM tbl_project_mst AS tproj
+              INNER JOIN tbl_proj_info AS tpi 
+                  ON tproj.proj_id = tpi.proj_id
+              LEFT JOIN tbl_clients_mst AS tc 
+                  ON tpi.client_id = tc.client_id
+              LEFT JOIN tbl_dev_type_mst AS devtype
+                  ON tpi.dev_type_id = devtype.dev_type_id
+              LEFT JOIN tbl_proj_status_mst AS ps
+                  ON tpi.proj_status_id = ps.proj_status_id
+        WHERE tproj.del_flag = 0
+     ORDER BY tproj.proj_id DESC, tproj.reg_date DESC;
+    </select>
 
     <!-- <select id="projectTable" resultType="com.example.demo.model.ProjectTable">
        SELECT tproj.proj_id,

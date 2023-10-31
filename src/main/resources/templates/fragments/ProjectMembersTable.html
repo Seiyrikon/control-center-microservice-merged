@@ -1,0 +1,26 @@
+<div class="mainContainer" th:fragment= "projectMembersTable" >
+  <div class="holder">
+    <div class="mainHolder" >
+
+    <table id="projectMembers" class="compact hover cell-border order-column" style="height: 90%; width: 100%; margin-top: 10px;" >
+      <thead class="dark-header">
+        <tr>
+          <th  style="text-align: center; background-color: #171e3a;">Emp ID</th>
+          <th  style="text-align: center; background-color: #171e3a;">First Name</th>
+          <th  style="text-align: center; background-color: #171e3a;">Last Name</th>
+          <th  style="text-align: center; background-color: #171e3a;">Position</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="member:${projectMembers}">
+          <td th:text="${member.emp_id}" style="text-align: center;"></td> 
+          <td th:text="${member.first_name}" style="text-align: center;"></td>
+          <td th:text="${member.last_name}" style="text-align: center;" ></td>
+          <td th:text="${member.position_name}"style="text-align: center;"></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </div>
+   

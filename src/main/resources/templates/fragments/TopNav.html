@@ -1,11 +1,13 @@
-<nav class="navbar bg-body-tertiary" th:fragment="TopNav" >
+<nav class="navbar bg-body-tertiary" th:fragment="TopNav"  style=" height: 100%;" >
 
-    <div class="container-fluid">
-        <a class="navbar-brand">Navbar</a>
-        <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+    <div class="container-fluid" style=" height: 100%; flex-direction: row; display: flex;">
+        <a class="navbar-brand">TITLE DITO AT MGA BACK BUTTON</a>
+
+        <div style="display: flex; flex-direction: column; height: 100%; width: 10%; justify-content: center; ">
+          <Typography style="text-align: center; font-weight: bold"> Cespanol </Typography>
+          <button type="button" class="btn btn-outline-primary">Logout</button>
+        </div>
     </div>
 
 </nav>
+

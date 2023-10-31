@@ -17,12 +17,12 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../css/bootstrap-datepicker.min.css">
-    
+     
     <!-- FOR CHIP COLOR -->
     <script src="../static/js/getChipColor.js"> </script>
   </head>
 
-  <body style="height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; background-color: #f7f5f4;">    
+  <body style="height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center;">
     <!-- FOR DATE PICKER -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
@@ -34,7 +34,7 @@
         <div th:replace="~{fragments/TopNav :: TopNav}"></div>
     </header>
 
-    <main style="height: 85%;width: 95%; margin-top: 1%;display: flex; justify-content: center;  ">
+    <main style="height: 85%;width: 95%; margin-top: 1%;display: flex; justify-content: center;">
         <div  th:replace="~{fragments/Project :: Project}"></div>
     </main>
   
@@ -48,5 +48,5 @@
       })
     </script>
   
-  </body>
-</html>
+  </body> 
+</html> 

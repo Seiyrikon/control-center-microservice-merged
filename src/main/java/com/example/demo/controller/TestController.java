@@ -64,4 +64,10 @@ public class TestController {
         public List<Map<String,Object>> getAllManagersOfProject(@PathVariable String proj_id) {
         return projectService.getAllManagersOfProject(proj_id);
     }
+
+
+     @GetMapping("/member/{proj_id}")
+        public List<Map<String,Object>> getAllMembersOfProjectForTable(@PathVariable String proj_id) {
+        return projectService.getAllMembersOfProjectForTable(proj_id);
+    }
 }

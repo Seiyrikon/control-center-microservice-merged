@@ -16,9 +16,20 @@
                 
                 <div>
                     <span th:text="${clientName.client_name}"></span>
-                    <span class="badge text-bg-success" th:text="${status.status_code}"></span>
+                    <span class="badge" th:text="${status.status_code}"
+                    th:style="${status.status_code == 'Ongoing' ? 'background-color: #e2725b;' : 
+                              status.status_code == 'Finished' ? 'background-color: #f28500;' :
+                              status.status_code == 'Pending' ? 'background-color: #464d77;' :
+                              status.status_code == 'Closed' ? 'background-color: #800020;' : ''}">
+              </span>
+
+              <!-- //pending - "#464d77",
+//ongoing - "#e2725b",
+//finished  - "#f28500",
+//closed - "#800020" -->
+
                 </div>
-            </div>
+            </div> 
 
             <!-- DEV TYPE AND OTHERS .... -->
             <div class="calendarMain">
@@ -139,7 +150,7 @@
                         <div class="projScroll">
                             <div class="card-body chipPlaceHolderManager"  >
                                 <div class="chipHolderManager " th:each= "manager_name:${projManager}">
-                                    <div class="chip"> C </div>
+                                    <div class="chip" th:text="${manager_name.first_letter}"> </div>
                                     <span class="name" th:text="${manager_name.manager_name}"></span>
                                 </div>
                           

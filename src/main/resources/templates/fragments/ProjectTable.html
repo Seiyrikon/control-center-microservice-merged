@@ -1,0 +1,41 @@
+<div class="mainContainer" th:fragment="projectTable">
+  <div class="holder">
+    <div class="mainHolder" >
+      <table id="projectTable" class="compact hover cell-border order-column" style="height: 90%; width: 100%; margin-top: 10px;" >
+        <thead class="dark-header"> 
+          <tr>
+            <th style="text-align: center; background-color: #171e3a;">Project</th>
+            <th style="text-align: center; background-color: #171e3a;">Client</th>
+            <th style="text-align: center; background-color: #171e3a;">Duration</th>
+            <th style="text-align: center; background-color: #171e3a;">Development Type</th>
+            <th style="text-align: center; background-color: #171e3a;">Members</th>
+            <th style="text-align: center; background-color: #171e3a;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="project:${listOfProjects}"> 
+            <td>  
+              <a
+                th:href="@{/index/{proj_id}(proj_id=${project.proj_id})}"
+                th:text="${project.proj_name}"
+                class="linkInfo"
+              ></a>
+            </td> 
+            <td th:text="${project.client_name}" style="text-align: center;"></td>
+            <td th:text="${project.start_date + ' - ' + project.end_date}" style="text-align: center;"></td>
+            <td th:text="${project.dev_type_name}" style="text-align: center;"></td>
+            <td>
+              <a
+                th:href="@{/index/projectMembers/{proj_id}(proj_id=${project.proj_id})}"
+                th:text="${project.members}"
+                class="linkInfo"
+              ></a>
+            </td>
+            <td th:text="${project.proj_status_name}" style="text-align: center;"></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  </div>
+  </div>
+  

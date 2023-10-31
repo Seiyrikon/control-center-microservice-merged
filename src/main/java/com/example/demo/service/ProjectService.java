@@ -3,9 +3,8 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.http.ResponseEntity;
-
 import com.example.demo.model.ProjectOutput;
+import com.example.demo.model.ProjectTable;
 
 // import com.controlcenter.controlcenter.model.ProjectInput;
 // import microservice.microservice.model.ProjectOutput;
@@ -13,7 +12,7 @@ import com.example.demo.model.ProjectOutput;
 
 public interface ProjectService {
 
-    // public ResponseEntity<List<ProjectTable>> projectTable();
+    public List<ProjectTable> projectList();
 
     // get all managers of a project
     public  List<Map<String, Object>> getAllManagersOfProject(String proj_id);
@@ -23,6 +22,8 @@ public interface ProjectService {
 
     // get all members of a project
     public List<Map<String, Object>>  getAllMembersOfProject(String proj_id);
+    
+    public List<Map<String, Object>>  getAllMembersOfProjectForTable(String proj_id);
 
     // get all development technologies of a project
     public List<Map<String, Object>> getAllTechnologiesOfProject(String proj_id);

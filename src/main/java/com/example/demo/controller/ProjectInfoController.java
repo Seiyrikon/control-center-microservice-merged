@@ -18,6 +18,12 @@ public class ProjectInfoController {
     @Autowired
     private ProjectService projectService;
 
+    @GetMapping("/")
+    public String iBringYouToLife(Model model) {
+        model.addAttribute("listOfProjects", projectService.projectList());
+        return "ProjectTable";
+    }
+
     @GetMapping("/{proj_id}")
     public String getAttributes(@PathVariable String proj_id, Model model) {
 
@@ -35,5 +41,12 @@ public class ProjectInfoController {
         return "index";
 
         
+    }
+
+    @GetMapping("/projectMembers/{proj_id}")
+    public String projectList(@PathVariable String proj_id, Model model) {
+        model.addAttribute("projectMembers", projectService.getAllMembersOfProjectForTable(proj_id));
+        model.addAttribute("projectInfo", projectService.getProjectById(proj_id));
+        return "projectMembers";
     }
 }

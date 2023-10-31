@@ -10,14 +10,14 @@ import com.example.demo.model.DevPhaseOutput;
 import com.example.demo.model.DevTypeOutput;
 import com.example.demo.model.ProjectOutput;
 import com.example.demo.model.ProjectStatusOutput;
+import com.example.demo.model.ProjectTable;
 import com.example.demo.model.TechnologyOutput;
 import com.example.demo.model.UserInfoOutput;
 
 
 @Mapper
 public interface ProjectDao {
-  // public List<ProjectTable> projectTable();
-
+  public List<ProjectTable> projectList();
     //get all managers of a certain project
     List<UserInfoOutput> getAllManagersOfProject(String proj_id);
     //get all development phases of a project

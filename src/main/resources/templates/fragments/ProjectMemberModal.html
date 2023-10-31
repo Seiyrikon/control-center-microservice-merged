@@ -1,0 +1,61 @@
+<div th:fragment="projectMemberModal">
+  <div
+    class="modal fade"
+    id="projectMembers"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Project Members
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover">
+            <thead class="dark-header">
+              <tr>
+                <th>Emp ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Position</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="member:${projectMembers}">
+                <td th:text="${member.emp_id}"></td>
+                <td th:text="${member.first_name}"></td>
+                <td th:text="${member.last_name}"></td>
+                <td th:text="${member.position_name}"></td>
+              </tr>
+            </tbody>
+            <tfoot
+              th:if="${projectMembers == null or #lists.isEmpty(projectMembers)}"
+            >
+              <tr>
+                <td colspan="4" align="center">No member/s yet</td>
+              </tr>
+            </tfoot>
+          </table>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
