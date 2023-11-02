@@ -23,6 +23,11 @@ public class ProjectInfoController {
         model.addAttribute("listOfProjects", projectService.projectList());
         return "ProjectTable";
     }
+    @GetMapping("/project-table")
+    public String projectTable(Model model) {
+        model.addAttribute("listOfProjects", projectService.projectList());
+        return "fragments/ProjectTable :: projectTable";
+    }
 
     @GetMapping("/{proj_id}")
     public String getAttributes(@PathVariable String proj_id, Model model) {
