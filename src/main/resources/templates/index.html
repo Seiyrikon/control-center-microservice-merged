@@ -35,6 +35,20 @@
     <!-- DATATABLE CDN -->
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <!-- DATATABLE CDN -->
+
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.min.css">
+
+    <link rel="stylesheet" href="../static/styles/ProjectStyles.css">
+
+    <script src="../static/js/getChipColor.js"> </script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   </head>
 
   <body>
@@ -43,16 +57,15 @@
         <h1>HEADER</h1>
     </header>
 
-    <main >
-        <div id="content">
-            <!-- <div th:replace= "~{fragments/ProjectTable :: projectTable}"></div> -->
-        </div>
+    <main style="height: 85%;width: 95%; margin-top: 1%;display: flex; justify-content: center;">
+        <div id="content"></div>
     </main>
 
     <footer>
     </footer>
     <script src="../static/js/projectTable.js"></script>
     <script src="../static/js/projectMembers.js"></script>
+    <script src="../static/js/datePicker.js"></script>
     <script src="../static/js/ajaxCalls.js"></script>
   </body> 
 </html> 

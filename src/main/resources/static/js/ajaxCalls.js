@@ -53,7 +53,7 @@ let projectAttribute = function getProjectAttribute(projectId) {
             document.getElementById("content").innerHTML = this.responseText;
         }
 
-        projectMembersCallBack();
+        datePickerCallBack();
     };
     xhttp.open("GET", `http://localhost:8080/index/project/${projectId}`, true);
     xhttp.send();
