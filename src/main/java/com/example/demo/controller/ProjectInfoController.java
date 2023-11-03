@@ -65,4 +65,9 @@ public class ProjectInfoController {
         return "fragments/TopNav :: TopNav";
     }
 
+    @GetMapping("/error-page")
+    public String errorPage() {
+        return "fragments/out_error :: ErrorPage";
+    }
+
 }

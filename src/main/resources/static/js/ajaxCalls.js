@@ -30,9 +30,6 @@ let projectTable = function getProjectTable() {
 
 let projectMembers = function getProjectMembers(projectId) {
     let xhttp = new XMLHttpRequest();
-    // let projectId = document.getElementById("project-id").textContent;
-
-    console.log("projectId: ", projectId);
 
     xhttp.onreadystatechange = function () {
         if(this.readyState == 4 && this.status == 200) {
@@ -40,6 +37,8 @@ let projectMembers = function getProjectMembers(projectId) {
 
             //callback function for datatable js
             dataTableCallBack();
+        } else {
+            errorPage();
         }
     };
     xhttp.open("GET", `http://localhost:8080/index/project-members/${projectId}`, true);
@@ -69,5 +68,17 @@ let topNavigation = function getTopNavigation() {
         }
     }
     xhttp.open("GET", "http://localhost:8080/index/top-nav", true);
+    xhttp.send();
+}
+
+let errorPage = function getErrorPage() {
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+        if(this.readyState < 4 && this.status > 200) {
+            document.getElementById("body").innerHTML = this.responseText;
+        }
+    }
+    xhttp.open("GET", "http://localhost:8080/index/error-page", true);
     xhttp.send();
 }
