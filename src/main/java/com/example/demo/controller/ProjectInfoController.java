@@ -40,12 +40,8 @@ public class ProjectInfoController {
         model.addAttribute("status", projectService.getStatusOfProject(proj_id));
         model.addAttribute("projManager", projectService.getAllManagersOfProject(proj_id));
         model.addAttribute("members", projectService.getAllMembersOfProject(proj_id));
-
-        System.out.println(projectService.getAttributesOfProject("1"));
         
         return "index";
-
-        
     }
 
     @GetMapping("/projectMembers/{proj_id}")
