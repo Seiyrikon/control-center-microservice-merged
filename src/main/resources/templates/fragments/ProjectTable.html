@@ -1,24 +1,24 @@
 <div class="mainContainer" th:fragment="projectTable">
   <div class="holder">
     <div class="mainHolder" >
-      <table id="projectTable" class="compact hover cell-border order-column" style="height: 90%; width: 100%; margin-top: 10px;" >
+      <table id="projectTable" class="compact hover cell-border order-column">
         <thead class="dark-header"> 
           <tr>
-            <th style="text-align: center; background-color: #171e3a;">Project</th>
-            <th style="text-align: center; background-color: #171e3a;">Client</th>
-            <th style="text-align: center; background-color: #171e3a;">Duration</th>
-            <th style="text-align: center; background-color: #171e3a;">Development Type</th>
-            <th style="text-align: center; background-color: #171e3a;">Members</th>
-            <th style="text-align: center; background-color: #171e3a;">Status</th>
+            <th>Project</th>
+            <th>Client</th>
+            <th>Duration</th>
+            <th>Development Type</th>
+            <th>Members</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="project:${listOfProjects}"> 
+          <tr th:each="project:${listOfProjects}">
             <td>  
               <a
-                th:href="@{/index/{proj_id}(proj_id=${project.proj_id})}"
                 th:text="${project.proj_name}"
                 class="linkInfo"
+                th:attr="onclick='projectAttribute(\'' + ${project.proj_id} + '\')'"
               ></a>
             </td> 
             <td th:text="${project.client_name}" style="text-align: center;"></td>
@@ -26,9 +26,9 @@
             <td th:text="${project.dev_type_name}" style="text-align: center;"></td>
             <td>
               <a
-                th:href="@{/index/projectMembers/{proj_id}(proj_id=${project.proj_id})}"
                 th:text="${project.members}"
                 class="linkInfo"
+                th:attr="onclick='projectMembers(\'' + ${project.proj_id} + '\')'"
               ></a>
             </td>
             <td th:text="${project.proj_status_name}" style="text-align: center;"></td>
@@ -39,3 +39,9 @@
   </div>
   </div>
   
+
+  <!-- for title -->
+  <!-- th:href="@{/index/{proj_id}(proj_id=${project.proj_id})}" -->
+
+  <!-- for members -->
+  <!-- th:href="@{/index/projectMembers/{proj_id}(proj_id=${project.proj_id})}" -->

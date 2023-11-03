@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.ProjectOutput;
+import com.example.demo.model.ProjectTable;
 import com.example.demo.service.ProjectService;
 
 @RestController
@@ -23,6 +24,10 @@ public class TestController {
     @GetMapping("/")
     public String testApi() {
         return "Hello World";
+    }
+    @GetMapping("/project-table")
+    public List<ProjectTable> projectTable() {
+        return projectService.projectList();
     }
 
     @GetMapping("/attribute/{proj_id}")

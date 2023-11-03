@@ -23,13 +23,28 @@ public class ProjectInfoController {
         model.addAttribute("listOfProjects", projectService.projectList());
         return "ProjectTable";
     }
+    @GetMapping("/sample-index")
+    public String index(Model model) {
+        // model.addAttribute("listOfProjects", projectService.projectList());
+        model.addAttribute("projectTable", "fragments/ProjectTable :: projectTable");
+        model.addAttribute("projectMembers", "fragments/ProjectMembersTable :: projectMembersTable");
+        return "index";
+    }
+
     @GetMapping("/project-table")
     public String projectTable(Model model) {
         model.addAttribute("listOfProjects", projectService.projectList());
         return "fragments/ProjectTable :: projectTable";
     }
+    
+    @GetMapping("/project-members/{proj_id}")
+    public String projectList(@PathVariable String proj_id, Model model) {
+        model.addAttribute("projectMembers", projectService.getAllMembersOfProjectForTable(proj_id));
+        model.addAttribute("projectInfo", projectService.getProjectById(proj_id));
+        return "fragments/ProjectMembersTable :: projectMembersTable";
+    }
 
-    @GetMapping("/{proj_id}")
+    @GetMapping("/project/{proj_id}")
     public String getAttributes(@PathVariable String proj_id, Model model) {
 
         model.addAttribute("projectInfo", projectService.getAttributesOfProject(proj_id));
@@ -41,13 +56,7 @@ public class ProjectInfoController {
         model.addAttribute("projManager", projectService.getAllManagersOfProject(proj_id));
         model.addAttribute("members", projectService.getAllMembersOfProject(proj_id));
         
-        return "index";
+        return "fragments/Project :: Project";
     }
 
-    @GetMapping("/projectMembers/{proj_id}")
-    public String projectList(@PathVariable String proj_id, Model model) {
-        model.addAttribute("projectMembers", projectService.getAllMembersOfProjectForTable(proj_id));
-        model.addAttribute("projectInfo", projectService.getProjectById(proj_id));
-        return "projectMembers";
-    }
 }
