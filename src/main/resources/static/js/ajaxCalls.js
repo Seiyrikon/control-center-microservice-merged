@@ -6,6 +6,7 @@ let initialDomLoad = function initialDomLoadHandler() {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+        topNavigation();
         projectTable();
       }
     };
@@ -36,10 +37,10 @@ let projectMembers = function getProjectMembers(projectId) {
     xhttp.onreadystatechange = function () {
         if(this.readyState == 4 && this.status == 200) {
             document.getElementById("content").innerHTML = this.responseText;
+
+            //callback function for datatable js
             dataTableCallBack();
         }
-
-        projectMembersCallBack();
     };
     xhttp.open("GET", `http://localhost:8080/index/project-members/${projectId}`, true);
     xhttp.send();
@@ -56,5 +57,17 @@ let projectAttribute = function getProjectAttribute(projectId) {
         datePickerCallBack();
     };
     xhttp.open("GET", `http://localhost:8080/index/project/${projectId}`, true);
+    xhttp.send();
+}
+
+let topNavigation = function getTopNavigation() {
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+        if(this.readyState == 4 && this.status == 200) {
+            document.getElementById("top-nav").innerHTML = this.responseText;
+        }
+    }
+    xhttp.open("GET", "http://localhost:8080/index/top-nav", true);
     xhttp.send();
 }

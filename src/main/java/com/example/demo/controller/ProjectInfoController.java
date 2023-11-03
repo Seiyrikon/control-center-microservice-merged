@@ -26,6 +26,7 @@ public class ProjectInfoController {
     @GetMapping("/sample-index")
     public String index(Model model) {
         // model.addAttribute("listOfProjects", projectService.projectList());
+        model.addAttribute("topNavigation", "fragments/TopNav :: TopNav");
         model.addAttribute("projectTable", "fragments/ProjectTable :: projectTable");
         model.addAttribute("projectMembers", "fragments/ProjectMembersTable :: projectMembersTable");
         return "index";
@@ -57,6 +58,11 @@ public class ProjectInfoController {
         model.addAttribute("members", projectService.getAllMembersOfProject(proj_id));
         
         return "fragments/Project :: Project";
+    }
+
+    @GetMapping("/top-nav")
+    public String topNav(Model model) {
+        return "fragments/TopNav :: TopNav";
     }
 
 }

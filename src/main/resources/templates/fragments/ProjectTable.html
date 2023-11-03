@@ -1,19 +1,22 @@
-<div class="mainContainer" th:fragment="projectTable">
-  <div class="holder">
-    <div class="mainHolder" >
-      <table id="projectTable" class="compact hover cell-border order-column">
+<div class="mainContainer" th:fragment="projectTable" style="display: flex; flex-direction: column;">
+  <div>
+    <h2>Project Table</h2>
+  </div>
+  <div class="holder" style="border: 1px solid red;">
+    <div class="mainHolder" style="border: 1px solid red; width: 100%;">
+      <table id="projectTable" class="compact hover cell-border order-column" style="height: 90%; width: 100%; margin-top: 10px;" >
         <thead class="dark-header"> 
           <tr>
-            <th>Project</th>
-            <th>Client</th>
-            <th>Duration</th>
-            <th>Development Type</th>
-            <th>Members</th>
-            <th>Status</th>
+            <th style="text-align: center; background-color: #171e3a;">Project</th>
+            <th style="text-align: center; background-color: #171e3a;">Client</th>
+            <th style="text-align: center; background-color: #171e3a;">Duration</th>
+            <th style="text-align: center; background-color: #171e3a;">Development Type</th>
+            <th style="text-align: center; background-color: #171e3a;">Members</th>
+            <th style="text-align: center; background-color: #171e3a;">Status</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="project:${listOfProjects}">
+          <tr th:each="project:${listOfProjects}"> 
             <td>  
               <a
                 th:text="${project.proj_name}"
@@ -38,7 +41,6 @@
   </div>
   </div>
   </div>
-  
 
   <!-- for title -->
   <!-- th:href="@{/index/{proj_id}(proj_id=${project.proj_id})}" -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Title</title>
+    <title>Project Microservice</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -49,22 +49,30 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <link rel="stylesheet" href="../static/css/projectTable.css">
+
   </head>
 
-  <body>
+  <body style="
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #5a5756;
+">
     
-    <header>    
+    <header id="top-nav" style="height: 10%; width: 95%; border: 1px solid red">    
         <h1>HEADER</h1>
     </header>
 
-    <main style="height: 85%;width: 95%; margin-top: 1%;display: flex; justify-content: center;">
-        <div id="content"></div>
+    <main style="height: 85%;width: 95%; margin-top: 1%;display: flex; justify-content: center; background-color: aquamarine;">
+        <div id="content" style="width: 100%; background-color: rgb(41, 38, 43);"></div>
     </main>
 
     <footer>
     </footer>
-    <script src="../static/js/projectTable.js"></script>
-    <script src="../static/js/projectMembers.js"></script>
+    <script src="../static/js/dataTable.js"></script>
     <script src="../static/js/datePicker.js"></script>
     <script src="../static/js/ajaxCalls.js"></script>
   </body> 

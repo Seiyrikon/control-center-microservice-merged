@@ -1,6 +1,10 @@
-<div class="mainContainer" th:fragment= "projectMembersTable" >
+<div class="mainContainer" th:fragment= "projectMembersTable" style="display: flex; flex-direction: column;">
+  <div>
+    <button class="btn btn-outline-dark"><- Back</button>
+    <h2 th:text="${projectInfo.proj_name} + ' Project Members'"></h2>
+  </div>
   <div class="holder">
-    <div class="mainHolder" >
+    <div class="mainHolder" style="width: 100%;">
 
     <table id="projectMembers" class="compact hover cell-border order-column" style="height: 90%; width: 100%; margin-top: 10px;" >
       <thead class="dark-header">
