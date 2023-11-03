@@ -10,7 +10,7 @@ let initialDomLoad = function initialDomLoadHandler() {
         projectTable();
       }
     };
-    xhttp.open("GET", "http://localhost:8080/index/sample-index", true);
+    xhttp.open("GET", "http://localhost:8080/index/project", true);
     xhttp.send();
 }
 

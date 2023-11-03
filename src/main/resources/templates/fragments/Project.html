@@ -1,5 +1,16 @@
 
-<div class="mainContainer"  th:fragment="Project">
+<div class="mainContainer"  th:fragment="Project" style="display: flex; flex-direction: column;">
+    <nav class="navbar bg-body-tertiary" th:fragment="TopNav" style="height: 100%; flex: 0;">
+        <div
+          class="container-fluid"
+          style="height: 100%; flex-direction: row; display: flex"
+        >
+        <div style="display: flex;">
+          <button class="btn btn-outline-dark" onclick="projectTable()"><- Back</button>
+          <h2 th:text="${projectInfo.proj_name} + ' Project Information'"></h2>
+        </div>
+        </div>
+      </nav>
     <div class="holder"> 
         <!-- LEFT -->
         <div  class="leftHolder"> 

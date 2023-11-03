@@ -1,9 +1,14 @@
 <div class="mainContainer" th:fragment="projectTable" style="display: flex; flex-direction: column;">
-  <div>
-    <h2>Project Table</h2>
-  </div>
-  <div class="holder" style="border: 1px solid red;">
-    <div class="mainHolder" style="border: 1px solid red; width: 100%;">
+  <nav class="navbar bg-body-tertiary" th:fragment="TopNav" style="height: 100%; flex: 0;">
+    <div
+      class="container-fluid"
+      style="height: 100%; flex-direction: row; display: flex"
+    >
+      <a class="navbar-brand">Project Table</a>
+    </div>
+  </nav>
+  <div class="holder">
+    <div class="mainHolder" style=" width: 100%;">
       <table id="projectTable" class="compact hover cell-border order-column" style="height: 90%; width: 100%; margin-top: 10px;" >
         <thead class="dark-header"> 
           <tr>

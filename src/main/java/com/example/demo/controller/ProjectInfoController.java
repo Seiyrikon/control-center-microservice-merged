@@ -23,7 +23,7 @@ public class ProjectInfoController {
         model.addAttribute("listOfProjects", projectService.projectList());
         return "ProjectTable";
     }
-    @GetMapping("/sample-index")
+    @GetMapping("/project")
     public String index(Model model) {
         // model.addAttribute("listOfProjects", projectService.projectList());
         model.addAttribute("topNavigation", "fragments/TopNav :: TopNav");
