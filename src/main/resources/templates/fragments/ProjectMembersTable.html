@@ -5,9 +5,9 @@
       class="container-fluid"
       style="height: 100%; flex-direction: row; display: flex"
     >
-    <div style="display: flex;">
-      <button class="btn btn-outline-dark" onclick="projectTable()"><- Back</button>
-      <h2 th:text="${projectInfo.proj_name} + ' Project Members'"></h2>
+    <div style="display: flex; gap:5px;">
+      <button type="button" class="btn active font" data-bs-toggle="button" aria-pressed="true" onclick="projectTable()">BACK</button>
+      <h2 class="font" style="margin: 0;" th:text="${projectInfo.proj_name} + ' Project Members'"></h2>
     </div>
     </div>
   </nav>
