@@ -107,7 +107,8 @@
     overflow-y: auto; 
     overflow-x: hidden ; 
     justify-content: center; 
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
 }
 
 /* Attributes of Right */
