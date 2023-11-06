@@ -118,14 +118,16 @@
     display: flex; 
     flex-direction: column;
     gap: 10px;
+    /* border: 1px solid blue; */
+    margin-top: 10px;
+
 } 
 /* Attributes of Calendar */
 .rightPlaceHolderCalendar{
-    height: 38%; 
+    height: 40%; 
     display: flex;  
     width: 98%;
     gap: 10px;
-    
 }
 .cardHolderCalendar{
     height: 100%; 
@@ -134,15 +136,16 @@
     border-radius: 20px;
     background-color: white;
     border: 1px  solid rgba(0, 0, 0, 0.175);  
+ 
 }
 .calendarContainer{
     text-align: center; 
     padding-top: 5px;   
     padding-bottom: 5px; 
     font-weight: bolder; 
-    background-color: #171e3a; 
+    background-color: #000000; 
     border-top-right-radius: 10px; 
-    border-top-left-radius: 10px;
+    border-top-left-radius: 10px; 
 }
 .calendar{
     pointer-events: none; 
@@ -153,11 +156,12 @@
 
 /* Attributes of Project Manager */
 .rightPlaceHolder{
-    height: 58%; 
+    height: 54.5%; 
     display: flex;  
     width: 98%;
     flex-direction: row;
-    gap: 10px;  
+    gap: 10px; 
+ 
 }
 .projectManagerContainer{
     height: 99%; 
