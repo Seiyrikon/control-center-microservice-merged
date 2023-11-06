@@ -1,14 +1,11 @@
 package  com.example.demo.service.serviceimpl;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ProjInfoDao;
@@ -25,35 +22,6 @@ import com.example.demo.model.TechnologyOutput;
 import com.example.demo.model.UserInfoOutput;
 import com.example.demo.service.ProjectService;
 
-// import com.controlcenter.controlcenter.dao.ActivityLogDao;
-// import microservice.microservice.dao.ClientDao;
-// import microservice.microservice.dao.DevPhaseDao;
-// import microservice.microservice.dao.DevTypeDao;
-// import microservice.microservice.dao.ProjInfoDao;
-// import microservice.microservice.dao.ProjectDao;
-// import microservice.microservice.dao.ProjectManagerDao;
-// import microservice.microservice.dao.ProjectPhaseDao;
-// import microservice.microservice.dao.ProjectTechnologyDao;
-// import microservice.microservice.dao.TechnologyDao;
-// import microservice.microservice.dao.UserDao;
-// import microservice.microservice.dao.UserProjectDao;
-// // import com.controlcenter.controlcenter.model.ActivityLogInput;
-// import microservice.microservice.model.ClientOutput;
-// import microservice.microservice.model.DevPhaseOutput;
-// import microservice.microservice.model.DevTypeOutput;
-// import microservice.microservice.model.ProjInfoOutput;
-// import microservice.microservice.model.ProjectOutput;
-// import microservice.microservice.model.ProjectPhaseOutput;
-// import microservice.microservice.model.ProjectStatusOutput;
-// // import microservice.microservice.model.ProjectTable;
-// import microservice.microservice.model.ProjectTechnologyOutput;
-// import microservice.microservice.model.TechnologyOutput;
-// import microservice.microservice.model.UserInfoOutput;
-// // import microservice.microservice.model.UserOutput;
-// import microservice.microservice.model.UserProjectOutput;
-// import microservice.microservice.service.ProjectService;
-// import com.controlcenter.controlcenter.shared.TimeFormatter;
-
 @Service
 public class ProjectServiceImpl implements ProjectService {
     
@@ -69,19 +37,6 @@ public class ProjectServiceImpl implements ProjectService {
     public ProjectOutput getProjectById(String id){
         return projectDao.getProjectById(id);
     };
-    // @Autowired
-    // public ProjectService projectService;
-
-    // @Autowired
-    // public ActivityLogDao activityLogDao;
-
-    // @Autowired
-    // public TimeFormatter timeFormatter;
-
-    // @Override
-    // public ResponseEntity<List<ProjectTable>> projectTable() {
-    //     return ResponseEntity.ok(projectDao.projectTable());
-    // }
 
     @Override
     //Used ResponseEntity to leverage the use of ResponseEntity method to properly handle responses sent by this API.
