@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.service.ProjectService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/index")
 public class ProjectInfoController {
@@ -24,7 +26,10 @@ public class ProjectInfoController {
         return "ProjectTable";
     }
     @GetMapping("/project")
-    public String index(Model model) {
+    public String index(Model model, HttpSession httpSession) {
+
+        //session
+        model.addAttribute("principal", httpSession.getAttribute("principal"));
         // model.addAttribute("listOfProjects", projectService.projectList());
         model.addAttribute("topNavigation", "fragments/TopNav :: TopNav");
         model.addAttribute("projectTable", "fragments/ProjectTable :: projectTable");
@@ -61,7 +66,10 @@ public class ProjectInfoController {
     }
 
     @GetMapping("/top-nav")
-    public String topNav(Model model) {
+    public String topNav(Model model, HttpSession httpSession) {
+        //session
+        model.addAttribute("principal", httpSession.getAttribute("principal"));
+
         return "fragments/TopNav :: TopNav";
     }
 
