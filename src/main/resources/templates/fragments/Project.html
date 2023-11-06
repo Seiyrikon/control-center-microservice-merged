@@ -108,11 +108,24 @@
                             <h2 class="titleHolder"> DESCRIPTION</h2>
                         </div>
                         
-                        <div class="descScroll">
+                        <!-- <div class="descScroll">
                             <div class="card-body chipPlaceHolder" >
                               <span th:text="${projectInfo.proj_desc}"> </span>
                             </div>
+                        </div> -->
+
+                        <div class="descScroll">
+                            <div class="card-body chipPlaceHolder" th:if="${projectInfo.proj_desc != null and projectInfo.proj_desc != ''}">
+                                <span style="padding: 1%; text-align: justify;" th:text="${projectInfo.proj_desc}"></span>
+                            </div>
+                            <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                                <div class="chipHolderManager " th:if="${projectInfo.proj_desc == null or projectInfo.proj_desc == ''}" 
+                                        style=" align-items: center; width: 80%; height: fit-content;">
+                                    <h5 style="margin: 0;">No description</h5>
+                                </div>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -174,12 +187,36 @@
                         
                         <div class="projScroll">
                             <div class="card-body chipPlaceHolder"  >
+                                <div class="chipHolderManager " th:if="${members.empty}">
+                                    <h5 style="margin: 0;">No selected member</h5>
+                                </div>
                                 <div class="chipHolderManager " th:each= "member_name:${members}">
                                     <div class="chip" th:text="${member_name.first_letter}"> </div>
                                     <span class="name" th:text="${member_name.member_name}"></span>
                                 </div>                       
                             </div>
                         </div>
+
+                        <!-- <div class="projScroll">
+                            <div class="card-body chipPlaceHolder"  >
+                                <div class="chipHolderManager " th:if="${members.empty}">
+                                    <p>No selected member</p>
+                                </div>
+                                <div class="chipHolderManager " th:if="${not members.empty}">
+                                    <div class="chipHolderManager" th:each="member_name: ${members}">
+                                        <div class="chip" th:text="${member_name.first_letter}"></div>
+                                        <span class="name" th:text="${member_name.member_name}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        
+
+
+                   
+
+
+
                     </div>
                 </div>
          
