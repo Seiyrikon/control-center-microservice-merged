@@ -53,12 +53,24 @@ public class AuthController {
             return "redirect:/index/project";
 
         } else {
-            // Failed login
-            model.addAttribute("error", "Invalid username or password");
+            if (user == null) {
+                // Username doesn't exist
+                model.addAttribute("usernameNotFound", true);
+            } else if (user != null && !response.isSuccess()) {
+                // Incorrect password
+                model.addAttribute("incorrectPassword", true);
+            } else if (username.isEmpty() || password.isEmpty() && !response.isSuccess()) {
+                // Missing input
+                model.addAttribute("missingInput", true);
+            } else {
+                // Handle other cases if needed
+                return "loginProj";
+            }
+
             return "loginProj";
         }
     }
-
+    
     // Logout remove httpsession
     @GetMapping("/logout")
     public String logout(HttpSession session) {

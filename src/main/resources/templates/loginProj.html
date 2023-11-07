@@ -24,6 +24,7 @@
                 <h3>Sign In</h3>
             </div>
 
+
             <div class="flex-column">
                 <label>Username</label>
             </div>
@@ -53,6 +54,11 @@
                 </svg>
                 <input class="input" type="password" id="password" name="password" placeholder="Enter your Password">
             </div>
+
+            <!-- Add a section for error messages -->
+            <div th:if="${usernameNotFound}" class="error">Username doesn't exist</div>
+            <div th:if="${incorrectPassword}" class="error">Incorrect password</div>
+            <div th:if="${missingInput}" class="error">Missing Input</div>
 
             <button class="button-submit" type="submit">Sign In</button>
         </form>
