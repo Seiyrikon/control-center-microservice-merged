@@ -23,8 +23,6 @@ public class UserServiceImpl implements UserService{
         try {
         UserInfoOutput user = userDao.getUserById(id);
 
-        List<String> userRoleLevelList = new ArrayList<>();
-
         Map<String, Object> role_user_level = new HashMap<>();
 
         String[] parts = user.getRole_user_level_string().split(",");
@@ -43,11 +41,7 @@ public class UserServiceImpl implements UserService{
         }
 
         role_user_level.put("role_user_level", objectList);
-        // for(String userRoleLevel : user.getRole_user_level()) {
-        // userRoleLevelList.add(userRoleLevel);
-        // }
 
-        // user.setRole_user_level(userRoleLevelList);
         user.setRole_user_level(role_user_level);
 
         System.out.println("User" + user);
