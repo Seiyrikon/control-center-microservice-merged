@@ -56,10 +56,22 @@
             </div>
 
             <!-- Add a section for error messages -->
-            <div class="text-center" style="font-size: 16px;font-weight: bold; color: red;">
-                <div th:if="${usernameNotFound}" class="error">Username doesn't exist</div>
-                <div th:if="${incorrectPassword}" class="error">Incorrect password</div>
-                <div th:if="${missingInput}" class="error">Missing Input</div>
+            <div class="mb-2 text-center" style="font-size: 16px;font-weight: bold; color: red;">
+                <div th:if="${usernameNotFound}" class="error">
+                    <span th:text="${usernameNotFound}"></span>
+                </div>
+                <div th:if="${incorrectPassword}" class="error">
+                    <span th:text="${incorrectPassword}"></span>
+                </div>
+                <div th:if="${missingFields}" class="error">
+                    <span th:text="${missingFields}"></span>
+                </div>
+                <div th:if="${missingUsername}" class="error">
+                    <span th:text="${missingUsername}"></span>
+                </div>
+                <div th:if="${missingPassword}" class="error">
+                    <span th:text="${missingPassword}"></span>
+                </div>
             </div>
 
             <button class="button-submit" type="submit">Sign In</button>
