@@ -116,7 +116,7 @@
 
                         <div class="descScroll">
                             <div class="card-body chipPlaceHolder" th:if="${projectInfo.proj_desc != null and projectInfo.proj_desc != ''}">
-                                <span style="padding: 1%; text-align: justify;" th:text="${projectInfo.proj_desc}"></span>
+                                <span style="padding: 1%; text-align: justify;" th:utext="${projectInfo.proj_desc}"></span>
                             </div>
                             <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
                                 <div class="chipHolderManager " th:if="${projectInfo.proj_desc == null or projectInfo.proj_desc == ''}" 
