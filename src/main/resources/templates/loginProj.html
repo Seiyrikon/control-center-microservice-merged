@@ -56,9 +56,11 @@
             </div>
 
             <!-- Add a section for error messages -->
-            <div th:if="${usernameNotFound}" class="error">Username doesn't exist</div>
-            <div th:if="${incorrectPassword}" class="error">Incorrect password</div>
-            <div th:if="${missingInput}" class="error">Missing Input</div>
+            <div class="text-center" style="font-size: 16px;font-weight: bold; color: red;">
+                <div th:if="${usernameNotFound}" class="error">Username doesn't exist</div>
+                <div th:if="${incorrectPassword}" class="error">Incorrect password</div>
+                <div th:if="${missingInput}" class="error">Missing Input</div>
+            </div>
 
             <button class="button-submit" type="submit">Sign In</button>
         </form>
@@ -70,57 +72,3 @@
 </html>
 
 
-<!-- <div class="background-image">
-        <div class="trapezoid">
-
-            <form class="form"  method="post">
-
-
-                
-            </form>
-        </div>
-    </div> -->
-
-
-<!-- <section> -->
-<!-- Login form for user -->
-<!-- <div class="container p-5">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="card">
-                    <div class="card-header text-center fs-4">User Login Page</div> -->
-
-<!-- Display error message -->
-<!-- <div th:if="${param.error}" class="alert alert-danger">
-                        Invalid username or password. Please try again.
-                    </div> -->
-
-<!-- Display success message -->
-<!-- <div th:if="${param.logout}" class="alert alert-success">
-                        Logout Successfully
-                    </div>
-
-                    <div class="card-body">
-                        <form th:action="@{/loginProj}" method="post">
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password"
-                                    required>
-                            </div>
-
-                            <button class="btn btn-primary col-md-12" type="submit">Login</button>
-                        </form>
-                        <div th:if="${error}" class="error">
-                            <span th:text="${error}"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    </div> -->
