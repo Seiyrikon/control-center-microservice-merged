@@ -70,7 +70,7 @@ public class AuthController {
                 model.addAttribute("incorrectPassword", "Invalid Password");
             }
     
-            return "loginUser";
+            return "loginProj";
         }
     }
     
