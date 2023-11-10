@@ -12,6 +12,8 @@ import com.example.demo.model.ProjectOutput;
 import com.example.demo.model.ProjectTable;
 import com.example.demo.service.ProjectService;
 
+import jakarta.servlet.http.HttpSession;
+
 @RestController
 @RequestMapping("/test")
 public class TestController {
@@ -72,5 +74,11 @@ public class TestController {
      @GetMapping("/member/{proj_id}")
         public List<Map<String,Object>> getAllMembersOfProjectForTable(@PathVariable String proj_id) {
         return projectService.getAllMembersOfProjectForTable(proj_id);
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("principal");
+        return "Logout success";
     }
 }

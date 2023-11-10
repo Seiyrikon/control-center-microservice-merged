@@ -77,7 +77,7 @@ public class AuthController {
     // Logout remove httpsession
     @GetMapping("/logout")
     public String logout(HttpSession session) {
-        session.removeAttribute("user");
-        return "redirect:/login";
+        session.removeAttribute("principal");
+        return "redirect:/loginProj";
     }
 }

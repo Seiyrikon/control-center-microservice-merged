@@ -82,3 +82,4 @@ let errorPage = function getErrorPage() {
     xhttp.open("GET", "http://localhost:8080/index/error-page", true);
     xhttp.send();
 }
+
