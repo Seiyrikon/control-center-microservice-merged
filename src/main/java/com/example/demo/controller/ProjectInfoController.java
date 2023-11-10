@@ -18,12 +18,19 @@ public class ProjectInfoController {
     private ProjectService projectService;
 
     @GetMapping("/")
-    public String iBringYouToLife(Model model) {
+    public String iBringYouToLife(Model model, HttpSession httpSession) {
+        if(httpSession.getAttribute("principal") == null) {
+            return "loginProj";
+        }
         model.addAttribute("listOfProjects", projectService.projectList());
         return "ProjectTable";
     }
     @GetMapping("/project")
     public String index(Model model, HttpSession httpSession) {
+
+        if(httpSession.getAttribute("principal") == null) {
+            return "loginProj";
+        }
 
         //session
         model.addAttribute("principal", httpSession.getAttribute("principal"));
@@ -35,20 +42,30 @@ public class ProjectInfoController {
     }
 
     @GetMapping("/project-table")
-    public String projectTable(Model model) {
+    public String projectTable(Model model, HttpSession httpSession) {
+        if(httpSession.getAttribute("principal") == null) {
+            return "loginProj";
+        }
         model.addAttribute("listOfProjects", projectService.projectList());
         return "fragments/ProjectTable :: projectTable";
     }
     
     @GetMapping("/project-members/{proj_id}")
-    public String projectList(@PathVariable String proj_id, Model model) {
+    public String projectList(@PathVariable String proj_id, Model model, HttpSession httpSession) {
+        if(httpSession.getAttribute("principal") == null) {
+            return "loginProj";
+        }
         model.addAttribute("projectMembers", projectService.getAllMembersOfProjectForTable(proj_id));
         model.addAttribute("projectInfo", projectService.getProjectById(proj_id));
         return "fragments/ProjectMembersTable :: projectMembersTable";
     }
 
     @GetMapping("/project/{proj_id}")
-    public String getAttributes(@PathVariable String proj_id, Model model) {
+    public String getAttributes(@PathVariable String proj_id, Model model, HttpSession httpSession) {
+
+        if(httpSession.getAttribute("principal") == null) {
+            return "loginProj";
+        }
 
         model.addAttribute("projectInfo", projectService.getAttributesOfProject(proj_id));
         model.addAttribute("clientName", projectService.getClientOfProject(proj_id));
@@ -64,6 +81,10 @@ public class ProjectInfoController {
 
     @GetMapping("/top-nav")
     public String topNav(Model model, HttpSession httpSession) {
+
+        if(httpSession.getAttribute("principal") == null) {
+            return "loginProj";
+        }
         //session
         model.addAttribute("principal", httpSession.getAttribute("principal"));
 
