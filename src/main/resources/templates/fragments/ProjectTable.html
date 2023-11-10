@@ -27,6 +27,9 @@
                 th:text="${project.proj_name}"
                 class="linkInfo"
                 th:attr="onclick='projectAttribute(\'' + ${project.proj_id} + '\')'"
+                style="cursor: pointer;  "
+                onmouseover="this.style.textDecoration='underline'"
+                onmouseout="this.style.textDecoration='none'"
               ></a>
             </td> 
             <td th:text="${project.client_name}" style="text-align: center;"></td>
@@ -37,6 +40,9 @@
                 th:text="${project.members}"
                 class="linkInfo"
                 th:attr="onclick='projectMembers(\'' + ${project.proj_id} + '\')'"
+                style="cursor: pointer;  "
+                onmouseover="this.style.textDecoration='underline'"
+                onmouseout="this.style.textDecoration='none'"
               ></a>
             </td>
             <td th:text="${project.proj_status_name}" style="text-align: center;"></td>
